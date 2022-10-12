@@ -1,11 +1,13 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry:'./src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
   module: {
     rules: [
@@ -31,12 +33,13 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|svg|gif)$/i,
-        type: 'asset/inline',
+        test: /\.png$/,
+        type: 'asset/resource',
       },
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',

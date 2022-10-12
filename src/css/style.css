@@ -7,11 +7,11 @@ html, body {
   margin: 0;
 }
 
-.fd {
+#fd {
   font-size: 35px;
   border: 5px;
   border-color: #ff0;
-  background: rgb(160, 30, 30);
+  background: rgb(59, 67, 170);
 }
 
 body {

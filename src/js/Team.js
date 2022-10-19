@@ -26,7 +26,7 @@ export default class Team {
   }
 }
 
-const characters = [new Swordsman(2), new Bowman(3)]; // Обратите внимание на new в отличие от playerTypes в прошлом примере
-const team = new Team(characters);
-console.log(team.characters) // [swordsman, bowman]
+// const characters = [new Swordsman(2), new Bowman(3)]; // Обратите внимание на new в отличие от playerTypes в прошлом примере
+// const team = new Team(characters);
+// console.log(team.characters) // [swordsman, bowman]
 //console.log(team.char[0].level) // 2

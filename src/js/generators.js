@@ -16,22 +16,23 @@ import Team from './Team';
  * возвращает новый экземпляр класса персонажа
  *
  */
+
 export function* characterGenerator(allowedTypes, maxLevel) {
   // TODO: write logic here
-  //if(maxLevel <= )
-  for(let i = 0; i < allowedTypes.length; i++) {
-    
+
+  for(let i = 0; i < allowedTypes.length; i++) {    
     const random = Math.floor(Math.random() * allowedTypes.length);
-    yield new allowedTypes[random]();
+    const item = new allowedTypes[random]();
+      yield item;
   }
 }
 
 // const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
-// //console.log(characterGenerator(playerTypes, 2));
+// // // console.log(characterGenerator(playerTypes, 2));
 // const playerGenerator = characterGenerator(playerTypes, 2); // в данном примере персонажи игрока могут быть 1 или 2-ого уровней
-// console.log(playerGenerator.next().value.level)
+// console.log(playerGenerator.next())
 // const character1 = playerGenerator.next().value; // случайный персонаж из списка playerTypes с уровнем 1 или 2
-// console.log(character1.level); // magician
+// console.log(character1.attack); // 10
 
 // const character2 = playerGenerator.next().value; // ещё один случайный персонаж
 // console.log(character2.level); // 1
@@ -45,14 +46,21 @@ export function* characterGenerator(allowedTypes, maxLevel) {
  * @returns экземпляр Team, хранящий экземпляры персонажей. Количество персонажей в команде - characterCount
  * */
 export function generateTeam(allowedTypes, maxLevel, characterCount) {
-  // TODO: write logic here 
-
+  const arr = []
+  for(let i = 0; i < characterCount; i++) {    
+    const random = Math.floor(Math.random() * allowedTypes.length);
+    const item = new allowedTypes[random];
+      if(item.level <= maxLevel) {
+        arr.push(item)
+      }      
+  }
+  return arr
 }
 
-// const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
-// const team = generateTeam(playerTypes, 3, 4); // массив из 4 случайных персонажей playerTypes с уровнем 1, 2 или 3
+const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
+const team = generateTeam(playerTypes, 3, 4); // массив из 4 случайных персонажей playerTypes с уровнем 1, 2 или 3
+console.log(team);
 
-// console.log(team);
 // console.log(team.characters[0].level) // 3
 // console.log(team.characters[1].level) // 3
 // console.log(team.characters[2].level) // 1

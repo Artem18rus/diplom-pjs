@@ -10,6 +10,8 @@ import './characters/Undead';
 import './characters/Daemon';
 import './generators';
 import './Team';
+import './PositionedCharacter';
+import './GameController';
 
 //console.log(3 + 4);
 // Точка входа webpack

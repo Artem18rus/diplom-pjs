@@ -20,14 +20,14 @@ import Team from './Team';
  export function* characterGenerator(allowedTypes, maxLevel) {
   // TODO: write logic here
   for (;;) {
-    const random = Math.floor(Math.random() * allowedTypes.length);
+    const type = Math.floor(Math.random() * allowedTypes.length);
     const level = Math.floor(Math.random() * maxLevel) + 1;
-    yield new allowedTypes[random](level);
+    yield new allowedTypes[type](level);
   }
 }
 
 // const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
-// // // // console.log(characterGenerator(playerTypes, 2));
+// //console.log(characterGenerator(playerTypes, 2));
 // const playerGenerator = characterGenerator(playerTypes, 2); // в данном примере персонажи игрока могут быть 1 или 2-ого уровней
 // console.log(playerGenerator.next())
 // const character1 = playerGenerator.next().value; // случайный персонаж из списка playerTypes с уровнем 1 или 2
@@ -57,8 +57,8 @@ import Team from './Team';
 
 // const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
 // const team = generateTeam(playerTypes, 3, 4); // массив из 4 случайных персонажей playerTypes с уровнем 1, 2 или 3
-// //console.log(team);
+// console.log(team);
 
-// console.log(team) // 3
+//console.log(team.characters[0].level) // 3
 // console.log(team.characters[1].level) // 3
 // console.log(team.characters[2].level) // 1

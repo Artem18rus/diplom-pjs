@@ -13,11 +13,6 @@ export default class GameController {
   constructor(gamePlay, stateService) {
     this.gamePlay = gamePlay;
     this.stateService = stateService;
-
-    this.userTeam = new Team();
-    this.aiTeam = new Team();
-    this.userHeroes = [Bowman, Swordsman, Magician];
-    this.aiHeroes = [Daemon, Undead, Vampire];
   }
 
   init() {
@@ -37,6 +32,5 @@ export default class GameController {
   onCellLeave(index) {
     // TODO: react to mouse leave
   }
-
 }
 

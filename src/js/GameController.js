@@ -38,13 +38,5 @@ export default class GameController {
     // TODO: react to mouse leave
   }
 
-  positionTeam(team, positions) {
-    const copyPositions = [...positions];
-    for (const item of team) {
-      const random = this.getRandom(copyPositions);
-      this.gameState.allCell.push(new PositionedCharacter(item, random));
-      copyPositions.splice(copyPositions.indexOf(random), 1);
-    }
-  }
 }
 

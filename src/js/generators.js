@@ -27,7 +27,7 @@ import Team from './Team';
 }
 
 // const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
-// //console.log(characterGenerator(playerTypes, 2));
+// // //console.log(characterGenerator(playerTypes, 2));
 // const playerGenerator = characterGenerator(playerTypes, 2); // в данном примере персонажи игрока могут быть 1 или 2-ого уровней
 // console.log(playerGenerator.next())
 // const character1 = playerGenerator.next().value; // случайный персонаж из списка playerTypes с уровнем 1 или 2
@@ -57,7 +57,7 @@ import Team from './Team';
 
 // const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
 // const team = generateTeam(playerTypes, 3, 4); // массив из 4 случайных персонажей playerTypes с уровнем 1, 2 или 3
-// console.log(team);
+// console.log(team[0]);
 
 //console.log(team.characters[0].level) // 3
 // console.log(team.characters[1].level) // 3

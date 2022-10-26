@@ -15,12 +15,6 @@ export default class GameController {
   constructor(gamePlay, stateService) {
     this.gamePlay = gamePlay;
     this.stateService = stateService;
-
-    this.userHeroes = [Bowman, Swordsman, Magician];
-    this.rivalHeroes = [Daemon, Undead, Vampire];
-
-    this.userTeam = new Team([Bowman, Swordsman, Magician]);
-    this.rivalTeam = new Team([Daemon, Undead, Vampire]);
   }
 
   init() {
@@ -28,12 +22,16 @@ export default class GameController {
     // TODO: load saved stated from stateService
     this.gamePlay.drawUi(themes.prairie);
 
-    console.log(this.userTeam.char); 
+    const characters = [new Swordsman(2), new Bowman(3), new Magician(1)]; // Обратите внимание на new в отличие от playerTypes в прошлом примере
+    const team = new Team(characters);
+    //console.log(team.characters) // [swordsman, bowman]
     
-    // const character = new Bowman(2);
-    // const position = 8; // для поля 8x8 лучник будет находиться слева на второй строке
-    // const positionedCharacter = new PositionedCharacter(character, position);    
-    // this.gamePlay.redrawPositions([positionedCharacter]);
+    // const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
+    const team1 = generateTeam(team.characters, 3, 4); // массив из 4 случайных персонажей playerTypes с уровнем 1, 2 или 3
+    //console.log(playerTypes)
+    console.log(team1.characters)
+
+
 
     // const character = new Bowman(2);
     // console.log(character)

@@ -10,4 +10,4 @@ export default class Swordsman extends Character {
 }
 
 // const swordsmanGen = new Swordsman(1);
-// console.log(swordsmanGen.level) // 1
+// console.log(swordsmanGen) // 1

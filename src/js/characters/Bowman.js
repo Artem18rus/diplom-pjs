@@ -9,5 +9,5 @@ export default class Bowman extends Character {
   }
 }
 
-// const bowmanGen = new Bowman(3);
-// console.log(bowmanGen.level) // 3
+// const bowmanGen = new Bowman(1);
+// console.log(bowmanGen) // 3

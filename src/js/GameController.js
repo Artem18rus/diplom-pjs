@@ -15,6 +15,11 @@ export default class GameController {
   constructor(gamePlay, stateService) {
     this.gamePlay = gamePlay;
     this.stateService = stateService;
+
+    this.userTeam = new Team();
+    this.opTeam = new Team();
+    this.userHeroes = [Bowman, Swordsman, Magician];
+    this.opHeroes = [Daemon, Undead, Vampire];
   }
 
   init() {
@@ -22,23 +27,36 @@ export default class GameController {
     // TODO: load saved stated from stateService
     this.gamePlay.drawUi(themes.prairie);
 
-    const characters = [new Swordsman(2), new Bowman(3), new Magician(1)]; // Обратите внимание на new в отличие от playerTypes в прошлом примере
-    const team = new Team(characters);
-    //console.log(team.characters) // [swordsman, bowman]
+    const team1 = new Team(this.userHeroes);
+    const teamGen1 = generateTeam(team1.characters, 3, 2);
+    const random1 = Math.floor(Math.random() * teamGen1.length);
+    const arrPosition1 = [0, 8, 16, 24, 32, 40, 48, 56];
+    const position1 = Math.floor(Math.random() * arrPosition1.length);
+    const positionedCharacter1 = new PositionedCharacter(teamGen1[random1], arrPosition1[position1]);
+    //this.gamePlay.redrawPositions([positionedCharacter1]);
+
+    const team2 = new Team(this.userHeroes);
+    const teamGen2 = generateTeam(team2.characters, 3, 2);
+    const random2 = Math.floor(Math.random() * teamGen2.length);
+    const arrPosition2 = [1, 9, 17, 25, 33, 41, 49, 57];
+    const position2 = Math.floor(Math.random() * arrPosition2.length);
+    const positionedCharacter2 = new PositionedCharacter(teamGen2[random2], arrPosition2[position2]);
     
-    // const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
-    const team1 = generateTeam(team.characters, 3, 4); // массив из 4 случайных персонажей playerTypes с уровнем 1, 2 или 3
-    //console.log(playerTypes)
-    console.log(team1.characters)
+    const team3 = new Team(this.opHeroes);
+    const teamGen3 = generateTeam(team3.characters, 3, 2);
+    const random3 = Math.floor(Math.random() * teamGen3.length);
+    const arrPosition3 = [6, 14, 22, 30, 38, 46, 54, 62];
+    const position3 = Math.floor(Math.random() * arrPosition3.length);
+    const positionedCharacter3 = new PositionedCharacter(teamGen3[random3], arrPosition3[position3]);
 
+    const team4 = new Team(this.opHeroes);
+    const teamGen4 = generateTeam(team4.characters, 3, 2);
+    const random4 = Math.floor(Math.random() * teamGen4.length);
+    const arrPosition4 = [7, 15, 23, 31, 39, 47, 55, 63];
+    const position4 = Math.floor(Math.random() * arrPosition4.length);
+    const positionedCharacter4 = new PositionedCharacter(teamGen4[random4], arrPosition4[position4]);
 
-
-    // const character = new Bowman(2);
-    // console.log(character)
-    // const position = 8; // для поля 8x8 лучник будет находиться слева на второй строке
-    // const positionedCharacter = new PositionedCharacter(character, position);
-    
-    // this.gamePlay.redrawPositions([positionedCharacter]);
+    this.gamePlay.redrawPositions([positionedCharacter1, positionedCharacter2, positionedCharacter3, positionedCharacter4]);
   }
 
   onCellClick(index) {

@@ -26,11 +26,11 @@ import Team from './Team';
   }
 }
 
-// const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
-// // // //console.log(characterGenerator(playerTypes, 2));
-// const playerGenerator = characterGenerator(playerTypes, 2); // в данном примере персонажи игрока могут быть 1 или 2-ого уровней
-// const a = playerGenerator.next().value
-// console.log(a)
+const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
+// //console.log(characterGenerator(playerTypes, 2));
+const playerGenerator = characterGenerator(playerTypes, 2); // в данном примере персонажи игрока могут быть 1 или 2-ого уровней
+const a = playerGenerator.next().value.type;
+console.log(a)
 // const character1 = playerGenerator.next().value; // случайный персонаж из списка playerTypes с уровнем 1 или 2
 // console.log(character1.attack); // 10
 

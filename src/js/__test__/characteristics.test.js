@@ -7,43 +7,43 @@ import Undead from '../Characters/Undead';
 import Vampire from '../Characters/Vampire';
 
 test('Characteristics-Bowman', () => {
-  const t = () => {
-    return new Bowman(1);
-  }
-  expect(t()).toEqual({"attack": 25, "defence": 25, "health": 50, "level": 1, "type": "bowman"});
+  const t = () => new Bowman(1);
+  expect(t()).toEqual({
+    attack: 25, defence: 25, health: 50, level: 1, type: 'bowman',
+  });
 });
 
 test('Characteristics-Daemon', () => {
-  const t = () => {
-    return new Daemon(1);
-  }
-  expect(t()).toEqual({"attack": 10, "defence": 10, "health": 50, "level": 1, "type": "daemon"});
+  const t = () => new Daemon(1);
+  expect(t()).toEqual({
+    attack: 10, defence: 10, health: 50, level: 1, type: 'daemon',
+  });
 });
 
 test('Characteristics-Magician', () => {
-  const t = () => {
-    return new Magician(1);
-  }
-  expect(t()).toEqual({"attack": 10, "defence": 40, "health": 50, "level": 1, "type": "magician"});
+  const t = () => new Magician(1);
+  expect(t()).toEqual({
+    attack: 10, defence: 40, health: 50, level: 1, type: 'magician',
+  });
 });
 
 test('Characteristics-Swordsman', () => {
-  const t = () => {
-    return new Swordsman(1);
-  }
-  expect(t()).toEqual({"attack": 40, "defence": 10, "health": 50, "level": 1, "type": "swordsman"});
+  const t = () => new Swordsman(1);
+  expect(t()).toEqual({
+    attack: 40, defence: 10, health: 50, level: 1, type: 'swordsman',
+  });
 });
 
 test('Characteristics-Undead', () => {
-  const t = () => {
-    return new Undead(1);
-  }
-  expect(t()).toEqual({"attack": 40, "defence": 10, "health": 50, "level": 1, "type": "undead"});
+  const t = () => new Undead(1);
+  expect(t()).toEqual({
+    attack: 40, defence: 10, health: 50, level: 1, type: 'undead',
+  });
 });
 
 test('Characteristics-Vampire', () => {
-  const t = () => {
-    return new Vampire(1);
-  }
-  expect(t()).toEqual({"attack": 25, "defence": 25, "health": 50, "level": 1, "type": "vampire"});
+  const t = () => new Vampire(1);
+  expect(t()).toEqual({
+    attack: 25, defence: 25, health: 50, level: 1, type: 'vampire',
+  });
 });

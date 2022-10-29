@@ -14,13 +14,12 @@ import { characterGenerator } from '../generators';
 //   });
 // });
 
-
 test('characterGenerator-test', () => {
   const t = () => {
     const playerTypes = [Bowman, Swordsman, Magician];
     const playerGenerator = characterGenerator(playerTypes, 2);
-    const a =  playerGenerator.next().value.type;
+    const a = playerGenerator.next().value.type;
     return a;
-  }
-  expect(t()).toBe("bowman");
+  };
+  expect(t()).toBe('bowman');
 });

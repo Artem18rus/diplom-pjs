@@ -20,7 +20,7 @@ export default class Character {
     this.health = 50;
     this.type = type;
     // TODO: выбросите исключение, если кто-то использует "new Character()"
-    if(new.target == Character) throw "Ошибка!!! Нельзя создавать объекты через new Character(level)";
+    if (new.target == Character) throw 'Ошибка!!! Нельзя создавать объекты через new Character(level)';
   }
 }
 // const eks1 = new Character();

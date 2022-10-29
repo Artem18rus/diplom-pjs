@@ -17,7 +17,7 @@ import Team from './Team';
  *
  */
 
- export function* characterGenerator(allowedTypes, maxLevel) {
+export function* characterGenerator(allowedTypes, maxLevel) {
   // TODO: write logic here
   for (;;) {
     const type = Math.floor(Math.random() * allowedTypes.length);
@@ -26,11 +26,11 @@ import Team from './Team';
   }
 }
 
-const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
-// //console.log(characterGenerator(playerTypes, 2));
-const playerGenerator = characterGenerator(playerTypes, 2); // в данном примере персонажи игрока могут быть 1 или 2-ого уровней
-const a = playerGenerator.next().value.type;
-console.log(a)
+// const playerTypes = [Bowman, Swordsman, Magician]; // доступные классы игрока
+// // //console.log(characterGenerator(playerTypes, 2));
+// const playerGenerator = characterGenerator(playerTypes, 2); // в данном примере персонажи игрока могут быть 1 или 2-ого уровней
+// const a = playerGenerator.next().value.type;
+// console.log(a);
 // const character1 = playerGenerator.next().value; // случайный персонаж из списка playerTypes с уровнем 1 или 2
 // console.log(character1.attack); // 10
 
@@ -45,17 +45,16 @@ console.log(a)
  * @param characterCount количество персонажей, которое нужно сформировать
  * @returns экземпляр Team, хранящий экземпляры персонажей. Количество персонажей в команде - characterCount
  * */
- export function generateTeam(allowedTypes, maxLevel, characterCount) {
+export function generateTeam(allowedTypes, maxLevel, characterCount) {
   // TODO: write logic here
   const team = [];
   const character = characterGenerator(allowedTypes, maxLevel);
 
-  for (; team.length < characterCount; ) {
+  for (; team.length < characterCount;) {
     team.push(character.next().value);
   }
   return team;
 }
-
 
 // const characters = [new Swordsman(2), new Bowman(3)]; // Обратите внимание на new в отличие от playerTypes в прошлом примере
 // console.log(characters)

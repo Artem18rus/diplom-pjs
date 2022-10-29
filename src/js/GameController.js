@@ -1,5 +1,5 @@
 import themes from './themes';
-import GamePlay from './GamePlay'
+import GamePlay from './GamePlay';
 import Bowman from './characters/Bowman';
 import Swordsman from './characters/Swordsman';
 import Magician from './characters/Magician';
@@ -8,8 +8,7 @@ import Undead from './characters/Undead';
 import Daemon from './characters/Daemon';
 import Team from './Team';
 import PositionedCharacter from './PositionedCharacter';
-import { characterGenerator } from './generators';
-import { generateTeam } from './generators';
+import { characterGenerator, generateTeam } from './generators';
 
 export default class GameController {
   constructor(gamePlay, stateService) {
@@ -33,7 +32,7 @@ export default class GameController {
     const arrPosition1 = [0, 8, 16, 24, 32, 40, 48, 56];
     const position1 = Math.floor(Math.random() * arrPosition1.length);
     const positionedCharacter1 = new PositionedCharacter(teamGen1[random1], arrPosition1[position1]);
-    //this.gamePlay.redrawPositions([positionedCharacter1]);
+    // this.gamePlay.redrawPositions([positionedCharacter1]);
 
     const team2 = new Team(this.userHeroes);
     const teamGen2 = generateTeam(team2.characters, 3, 2);
@@ -41,7 +40,7 @@ export default class GameController {
     const arrPosition2 = [1, 9, 17, 25, 33, 41, 49, 57];
     const position2 = Math.floor(Math.random() * arrPosition2.length);
     const positionedCharacter2 = new PositionedCharacter(teamGen2[random2], arrPosition2[position2]);
-    
+
     const team3 = new Team(this.opHeroes);
     const teamGen3 = generateTeam(team3.characters, 3, 2);
     const random3 = Math.floor(Math.random() * teamGen3.length);
@@ -57,14 +56,40 @@ export default class GameController {
     const positionedCharacter4 = new PositionedCharacter(teamGen4[random4], arrPosition4[position4]);
 
     this.gamePlay.redrawPositions([positionedCharacter1, positionedCharacter2, positionedCharacter3, positionedCharacter4]);
-  }
-
-  onCellClick(index) {
-    // TODO: react to click
+  
+    //this.gamePlay.addCellEnterListener('ghghgh');
+   //console.log(this.onCellEnter(4))
+    this.gamePlay.addCellEnterListener(this.onCellEnter.bind(this));
   }
 
   onCellEnter(index) {
     // TODO: react to mouse enter
+    //let elem = document.querySelectorAll('.cell');
+    //console.log(elem)
+    let arr = []
+    for(let i = 0; i < this.gamePlay.cells.length; i++) {
+      if(this.gamePlay.cells[i].children.length !== 0) { 
+        arr.push(this.gamePlay.cells[i])        
+      }
+    }
+    console.log(arr)
+
+    //for(let i = 0; i < arr.length; i++) {
+      // arr[i].addEventListener('mouseover', (event) => {
+      //   console.log('event.target')
+      // }
+      // let f = arr.find((item, idx) => idx == index)
+      // console.log(f)
+      // document.querySelector(`${arr[i]}`).addEventListener('mouseover', function() {
+      //   console.log(this);
+      // });
+    //}
+
+    //console.log('arr')
+  }
+ 
+  onCellClick(index) {
+    // TODO: react to click
   }
 
   onCellLeave(index) {
@@ -72,5 +97,6 @@ export default class GameController {
   }
 }
 
-
-
+// const eks1 = new GamePlay();
+// eks1.addCellEnterListener('ghghgh');
+// console.log(eks1.cellEnterListeners)

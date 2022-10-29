@@ -4,7 +4,6 @@ import Swordsman from './characters/Swordsman';
 import Magician from './characters/Magician';
 import GamePlay from './GamePlay';
 
-
 export default class PositionedCharacter {
   constructor(character, position) {
     if (!(character instanceof Character)) {

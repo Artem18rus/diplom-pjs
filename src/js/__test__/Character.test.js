@@ -20,8 +20,6 @@ test.each([
   [new Swordsman(1)],
   [new Undead(1)],
   [new Vampire(1)],
-])(
-  ('NO-error'), (t) => {
-    expect(() => t).not.toThrow();
-  },
-);
+])(('NO-error'), (t) => {
+  expect(() => t).not.toThrow();
+});

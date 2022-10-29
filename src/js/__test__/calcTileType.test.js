@@ -12,7 +12,7 @@ test('Function-calcTileType(top-right)', () => {
 
 test('Function-calcTileType(top)', () => {
   const funcTotal = calcTileType(3, 8);
-  expect(funcTotal).toBe('top')
+  expect(funcTotal).toBe('top');
 });
 
 test('Function-calcTileType(bottom-left)', () => {
